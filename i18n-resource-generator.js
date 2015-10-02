@@ -136,9 +136,9 @@ function i18nGenerating(data) {
 function i18nGenerateAppendHeader(output, outfile) {
     for (var lang in variable.i18n) {
         
-        if (!(variable.i18n).hasOwnProperty(lang)) {
-            continue;
-        }
+        //if (!(variable.i18n).hasOwnProperty(lang)) {
+        //    continue;
+        //}
         var header = "/*\r\n\r\nGenerated file using i18n-resource-generator. Please edit the file " + outfile + ".txt\r\n\r\n*/\r\n";
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.writeFileSync(relativePathAndName, header, { flag: 'w' });
@@ -147,12 +147,15 @@ function i18nGenerateAppendHeader(output, outfile) {
 
 function i18nAppendCrLf(output, outfile) {
     for (var lang in variable.i18n) {
-        
-        if (!(variable.i18n).hasOwnProperty(lang)) {
-            continue;
-        }
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.appendFileSync(relativePathAndName, lineEnding, { flag: 'a' });
+    }
+}
+
+function i18nDeleteOldFiles(output, outfile) {
+    for (var lang in variable.i18n) {
+        var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
+        fs.writeFileSync(relativePathAndName, '', { flag: 'w' });
     }
 }
 
@@ -164,7 +167,7 @@ function i18nFileGenerate(output, options, outfile) {
             writeText = beautify(writeText, options);
         }
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
-        fs.appendFileSync(relativePathAndName, (writeText + lineEnding), { flag: 'a' });
+        fs.appendFileSync(relativePathAndName, (writeText), { flag: 'w' });
     }
 }
 
@@ -211,7 +214,6 @@ function readFileAndGenerating(input, split) {
         i18nGenerating(line);
         index = remaining.indexOf('\n', last);
     }
-    
     remaining = remaining.substring(last);
     
     if (remaining.length > 0) {
@@ -239,6 +241,7 @@ module.exports = function (input, output, options, split) {
         }
     }
     //i18nGenerateAppendHeader(output, outFile);
+    i18nDeleteOldFiles(output, options);
     i18nFileGenerate(output, options || null, outFile);
     //i18nAppendCrLf(output, outFile);
 };
