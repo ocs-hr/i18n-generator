@@ -23,7 +23,7 @@
     <Content Include="README.md" />
     <Compile Include="browser.js" />
     <Compile Include="cli.js" />
-    <Compile Include="Gruntfile.js" />
+    <Compile Include="gruntfile.js" />
     <Compile Include="i18n-generator.js" />
     <Compile Include="i18n-generator_test.js" />
     <Compile Include="demo\tabletop.js" />

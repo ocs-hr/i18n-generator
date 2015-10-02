@@ -13,7 +13,7 @@ Example:
 ## Getting Started
 
 **node.js**  
-Install the module with: `npm install -g i18n-generator`  
+Install the module with: `npm install -g https://github.com/ocs-hr/i18n-generator`  
 Ensure that the path to modules are in your env. 
 If not create NODE_PATH to your user variables:  
 `NODE_PATH := %USERPROFILE%\AppData\Roaming\npm\node_modules`

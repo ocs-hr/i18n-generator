@@ -13,8 +13,8 @@
     "url": "https://github.com/ocs-hr/i18n-generator"
   },
   "author": {
-    "name": "Huei Tan",
-    "email": "huei90@gmail.com",
+    "name": "OCS HR",
+    "email": "support@onsoft.no",
     "url": "https://github.com/ocs-hr/"
   },
   "scripts": {
@@ -31,10 +31,11 @@
     "localization"
   ],
   "dependencies": {
-    "js-beautify": "^1.5.1",
-    "multiline": "~1.0.0"
+    "js-beautify": "latest",
+    "multiline": "latest"
   },
   "devDependencies": {
+    "grunt": "latest",
     "browserify": "^9.0.3",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-nodeunit": "^0.4.1",
