@@ -134,12 +134,15 @@ function i18nGenerating(data) {
 }
 
 function i18nGenerateFileHeader(output, outfile) {
-    variable.i18n.forEach(function (lang) {
+    for (lang in variable.i18n) {
+        if (!variable.i18n.hasOwnProperty(lang))
+        {
+          continue;
+        }
         var header = "// Generated file using i18n-resource-generator. Please edit the file " + outfile + ".txt";
-        
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.writeFileSync(relativePathAndName, header, { flag: 'w' });
-    });
+    };
 }
 
 function i18nFileGenerate(output, options, outfile) {
