@@ -139,9 +139,21 @@ function i18nGenerateAppendHeader(output, outfile) {
         if (!(variable.i18n).hasOwnProperty(lang)) {
             continue;
         }
-        var header = "/* \r\nGenerated file using i18n-resource-generator. Please edit the file " + outfile + ".txt\r\n\r\n*/\r\n";
+        var header = "/*\r\n\r\nGenerated file using i18n-resource-generator. Please edit the file " + outfile + ".txt\r\n\r\n*/\r\n";
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.writeFileSync(relativePathAndName, header, { flag: 'w' });
+    }
+}
+
+function i18nAppendCrLf() {
+    for (var lang in variable.i18n) {
+        
+        if (!(variable.i18n).hasOwnProperty(lang)) {
+            continue;
+        }
+        var lineEnding = "\r\n";
+        var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
+        fs.appendFileSync(relativePathAndName, lineEnding, { flag: 'a' });
     }
 }
 
@@ -229,7 +241,7 @@ module.exports = function (input, output, options, split) {
     }
     i18nGenerateAppendHeader(output, outFile);
     i18nFileGenerate(output, options || null, outFile);
-
+    i18nAppendCrLf(output, outFile);
 };
 
 module.exports.get = function (input, split, cb) {
