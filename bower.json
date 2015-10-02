@@ -1,12 +1,13 @@
 {
-  "name": "i18n-generator",
-  "version": "0.2.0",
-  "homepage": "https://github.com/huei90/i18n-generator",
+  "name": "i18n-resource-generator",
+  "version": "0.1.2",
+  "homepage": "https://github.com/ocs-hr/i18n-resource-generator",
   "authors": [
-    "Huei Tan"
+    "OCS HR",
+    "Erlend Torsvik"
   ],
-  "description": "i18n json files generator for node, web browser and command line",
-  "main": "i18n-generator.js",
+  "description": "i18n json locale folder files generator for node",
+  "main": "i18n-resource-generator.js",
   "keywords": [
     "i18n-generator",
     "i18n",

@@ -20,10 +20,10 @@ module.exports = function (grunt) {
         src: 'Gruntfile.js'
       },
       lib: {
-        src: ['i18n-generator.js']
+        src: ['i18n-resource-generator.js']
       },
       test: {
-        src: ['i18n-generator_test.js']
+        src: ['i18n-resource-generator_test.js']
       }
     },
     watch: {

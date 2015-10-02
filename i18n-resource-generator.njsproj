@@ -17,6 +17,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="remove-comments.js" />
     <Content Include="index.html" />
     <Content Include="bower.json" />
     <Content Include="component.json" />

@@ -3,9 +3,8 @@
 'use strict';
 
 var fs = require('fs');
-
 var multiline = require('multiline');
-var i18nGenerator = require('./i18n-generator');
+var i18nGenerator = require('./i18n-resource-generator');
 
 var userArgs = process.argv;
 var inputFileParam = userArgs[2];

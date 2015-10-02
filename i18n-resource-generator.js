@@ -133,16 +133,16 @@ function i18nGenerating(data) {
 
 }
 
-function i18nGenerateFileHeader(output, outfile) {
-    for (lang in variable.i18n) {
-        if (!variable.i18n.hasOwnProperty(lang))
-        {
-          continue;
+function i18nGenerateAppendHeader(output, outfile) {
+    for (var lang in variable.i18n) {
+        
+        if (!(variable.i18n).hasOwnProperty(lang)) {
+            continue;
         }
-        var header = "// Generated file using i18n-resource-generator. Please edit the file " + outfile + ".txt";
+        var header = "/* \r\nGenerated file using i18n-resource-generator. Please edit the file " + outfile + ".txt\r\n\r\n*/\r\n";
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.writeFileSync(relativePathAndName, header, { flag: 'w' });
-    };
+    }
 }
 
 function i18nFileGenerate(output, options, outfile) {
@@ -153,7 +153,7 @@ function i18nFileGenerate(output, options, outfile) {
             writeText = beautify(writeText, options);
         }
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
-        fs.writeFileSync(relativePathAndName, writeText, { flag: 'w' });
+        fs.appendFileSync(relativePathAndName, writeText, { flag: 'a' });
     }
 }
 
@@ -227,7 +227,7 @@ module.exports = function (input, output, options, split) {
             fs.mkdirSync(folder);
         }
     }
-    i18nGenerateFileHeader(output, outFile);
+    i18nGenerateAppendHeader(output, outFile);
     i18nFileGenerate(output, options || null, outFile);
 
 };
