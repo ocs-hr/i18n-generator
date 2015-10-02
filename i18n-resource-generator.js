@@ -239,7 +239,7 @@ module.exports = function (input, output, options, split) {
             fs.mkdirSync(folder);
         }
     }
-    i18nGenerateAppendHeader(output, outFile);
+    //i18nGenerateAppendHeader(output, outFile);
     i18nFileGenerate(output, options || null, outFile);
     //i18nAppendCrLf(output, outFile);
 };
