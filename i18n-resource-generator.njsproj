@@ -6,12 +6,13 @@
     <ProjectGuid>{b0b2ab78-c459-44ba-a49c-4ee5243dd154}</ProjectGuid>
     <ProjectHome />
     <ProjectView>ShowAllFiles</ProjectView>
-    <StartupFile>i18n-generator.js</StartupFile>
+    <StartupFile>i18n-resource-generator.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>i18n-resource-generator</Name>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -24,8 +25,8 @@
     <Compile Include="browser.js" />
     <Compile Include="cli.js" />
     <Compile Include="gruntfile.js" />
-    <Compile Include="i18n-generator.js" />
-    <Compile Include="i18n-generator_test.js" />
+    <Compile Include="i18n-resource-generator.js" />
+    <Compile Include="i18n-resource-generator_test.js" />
     <Compile Include="demo\tabletop.js" />
     <Compile Include="lib\to_csv.js" />
     <Compile Include="lib\to_pipe.js" />

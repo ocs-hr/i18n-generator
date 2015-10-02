@@ -1,10 +1,11 @@
 {
-  "name": "i18n-generator",
+  "name": "i18n-resource-generator",
   "repo": "https://github.com/ocs-hr/i18n-generator",
-  "description": "i18n generator for node and web",
-  "version": "0.2.0",
+  "description": "i18n generator for node",
+  "version": "0.0.1",
   "keywords": [
     "i18n-generator",
+    "i18n-resource-generator",
     "i18n",
     "json",
     "localization"
@@ -14,7 +15,7 @@
   "development": {
   },
   "scripts": [
-      "i18n-generator.js"
+      "i18n-resource-generator.js"
   ],
   "license": "MIT"
 }

@@ -1,4 +1,4 @@
-# i18n-generator 
+# i18n-resource-generator 
 
 i18n json files generator for node  
 This generator is a copy of the i18n-generator from [i18n-generator](https://github.com/huei90/i18n-generator).  
@@ -13,14 +13,14 @@ Example:
 ## Getting Started
 
 **node.js**  
-Install the module with: `npm install -g https://github.com/ocs-hr/i18n-generator`  
+Install the module with: `npm install -g https://github.com/ocs-hr/i18n-resource-generator`  
 Ensure that the path to modules are in your env. 
 If not create NODE_PATH to your user variables:  
 `NODE_PATH := %USERPROFILE%\AppData\Roaming\npm\node_modules`
 
 
 ```javascript
-var i18ng = require('i18n-generator');
+var i18ng = require('i18n-resource-generator');
 
 var languageFile = 'res/languages/name.txt', outputPath='www/locales';
 

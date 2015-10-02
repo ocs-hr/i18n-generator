@@ -1,8 +1,8 @@
 {
-  "name": "i18n-generator",
+  "name": "i18n-resource-generator",
   "version": "0.1.0",
   "description": "i18n json files generator for node, which outputs to multiple folders",
-  "main": "i18n-generator.js",
+  "main": "i18n-resource-generator.js",
   "bin": {
     "i18n": "cli.js"
   },
@@ -36,12 +36,12 @@
   },
   "devDependencies": {
     "grunt": "latest",
-    "browserify": "^9.0.3",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "jshint-stylish": "^1.0.0",
-    "load-grunt-tasks": "^3.1.0",
-    "time-grunt": "^1.0.0"
+    "browserify": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-nodeunit": "latest",
+    "grunt-contrib-watch": "latest",
+    "jshint-stylish": "latest",
+    "load-grunt-tasks": "latest",
+    "time-grunt": "latest"
   }
 }
