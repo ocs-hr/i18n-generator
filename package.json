@@ -18,8 +18,7 @@
     "url": "https://github.com/ocs-hr/"
   },
   "scripts": {
-    "test": "grunt",
-    "browser": "browserify i18n-generator.js > browser.js"
+    "test": "grunt"
   },
   "license": "MIT",
   "preferGlobal": true,

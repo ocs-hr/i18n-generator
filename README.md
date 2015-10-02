@@ -1,8 +1,11 @@
 # i18n-resource-generator 
 
+###Use at own risk, but please refine. 
+
 i18n json files generator for node  
 This generator is a copy of the i18n-generator from [i18n-generator](https://github.com/huei90/i18n-generator).  
 The difference to this repository is that it will generate files with [name].json given name.txt is input and it will generate the in localized named output folders.  
+
 
 Example:
 

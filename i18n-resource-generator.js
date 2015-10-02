@@ -1,8 +1,8 @@
 /*
- * i18n-generator
- * https://github.com/huei90/i18n-generator
+ * i18n-resouce-generator
+ * https://github.com/ocs-hr/i18n-resource-generator
  *
- * Copyright (c) 2014 Huei Tan
+ * Copyright (c) 2015 OCS HR
  * Licensed under the MIT license.
  */
 
@@ -227,8 +227,12 @@ module.exports.get = function (input, split, cb) {
 		split = 'pipe';
 	}
 	readFileAndGenerating(input, split);
+    
+    if (typeof(cb) === "function")
+    {
+        cb.call(null, null, variable.i18n);  
+    }
 	
-	cb(null, variable.i18n);
 };
 
 /* browser window */

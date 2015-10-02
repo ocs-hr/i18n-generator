@@ -22,7 +22,6 @@
     <Content Include="component.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Compile Include="browser.js" />
     <Compile Include="cli.js" />
     <Compile Include="gruntfile.js" />
     <Compile Include="i18n-resource-generator.js" />
