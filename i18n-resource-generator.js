@@ -30,7 +30,7 @@ var variableName = {
     nestStart: '=>',
     nestEnd: '<='
 };
-
+var lineEnding = "\r\n";
 var variable = {
     split: '|',
     language: [],
@@ -151,7 +151,6 @@ function i18nAppendCrLf(output, outfile) {
         if (!(variable.i18n).hasOwnProperty(lang)) {
             continue;
         }
-        var lineEnding = "\r\n";
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
         fs.appendFileSync(relativePathAndName, lineEnding, { flag: 'a' });
     }
@@ -165,7 +164,7 @@ function i18nFileGenerate(output, options, outfile) {
             writeText = beautify(writeText, options);
         }
         var relativePathAndName = output + '/' + lang + '/' + outfile + '.json';
-        fs.appendFileSync(relativePathAndName, writeText, { flag: 'a' });
+        fs.appendFileSync(relativePathAndName, (writeText + lineEnding), { flag: 'a' });
     }
 }
 
