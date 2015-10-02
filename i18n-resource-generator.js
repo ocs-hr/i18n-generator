@@ -241,7 +241,7 @@ module.exports = function (input, output, options, split) {
         }
     }
     //i18nGenerateAppendHeader(output, outFile);
-    i18nDeleteOldFiles(output, options);
+    //i18nDeleteOldFiles(output, options);
     i18nFileGenerate(output, options || null, outFile);
     //i18nAppendCrLf(output, outFile);
 };
