@@ -1,30 +1,31 @@
 # i18n-generator 
-[![Build Status](https://secure.travis-ci.org/huei90/i18n-generator.png?branch=master)](http://travis-ci.org/huei90/i18n-generator)
-[![Dependency Status](https://david-dm.org/huei90/i18n-generator.svg)](https://david-dm.org/huei90/i18n-generator)
-[![devDependency Status](https://david-dm.org/huei90/i18n-generator/dev-status.svg)](https://david-dm.org/huei90/i18n-generator#info=devDependencies)
 
-i18n json files generator for node, web browser and command line
+i18n json files generator for node  
+This generator is a copy of the i18n-generator from [i18n-generator](https://github.com/huei90/i18n-generator).  
+The difference to this repository is that it will generate files with [name].json given name.txt is input and it will generate the in localized named output folders.  
 
-[i18n Online Generate Tools](http://huei90.github.io/i18n-generator)
+Example:
+
+* output   
+ * locale  
+      * name.json
+
 ## Getting Started
 
-**node.js**<br/>
-Install the module with: `npm install -g i18n-generator`
+**node.js**  
+Install the module with: `npm install -g i18n-generator`  
+Ensure that the path to modules are in your env. 
+If not create NODE_PATH to your user variables:  
+`NODE_PATH := %USERPROFILE%\AppData\Roaming\npm\node_modules`
+
 
 ```javascript
-var i18nGenerator = require('i18n-generator');
+var i18ng = require('i18n-generator');
 
-var inputFile = 'input.txt',
-    outputPath = 'output';
+var languageFile = 'res/languages/name.txt', outputPath='www/locales';
 
-i18nGenerator(inputFile, outputPath);
-
-// js-beautify your json
-i18nGenerator(inputFile, outputPath, true);
-// or given js-beautify options
-i18nGenerator(inputFile, outputPath, { indent_size: 2 });
-// settings split variable (default as |)
-i18nGenerator(inputFile,outputPath, options, 'csv');
+// js-beautify your json 
+i18ng(languageFile, outputPath, true);
 
 // options => https://github.com/beautify-web/js-beautify#options
 // splitter support
@@ -45,83 +46,47 @@ i18nGenerator.get(input, function (err, data) {
 });
 ```
 
-**browser**
-
-```html
-<script src="i18n-generator.js"></script>
-```
-
-```js
-var i18n = window.i18n;
-i18n(inputData, 'csv', function (err, data) {
-    console.log(data);
-    // => output i18n data
-});
-
-// or easily
-i18n(inputData, function (err, data) {
-	console.log(data);
-	// => split default pipe |
-});
-```
-
-**cli**
-```bash
-$ i18n input.txt output
-
-# watch file
-$ i18n input.txt output --watch
-```
-
 ## Workflow
 
-**input file**
-```
-i18n=> | en | zh_TW | de | my
-you | you | 你 | Du | kamu
-I | I | 我 | ich | Saya
-love | love | 喜歡 | liebe | cinta
-eat | eat | 吃 | essen | makan
-ilovegithub | i love github | 我愛 Github | ich liebe Github | Saya cinta pada Github
-```
-
-**output (de.json)**
-```js
-{"you":"Du","I":"ich","love":"liebe","eat":"essen","ilovegithub":"ich liebe Github"}
-```
-**output (en.json)**
-```js
-{"you":"you","I":"I","love":"love","eat":"eat","ilovegithub":"i love github"}
-```
-**output (my.json)**
-```js
-{"you":"kamu","I":"Saya","love":"cinta","eat":"makan","ilovegithub":"Saya cinta pada Github"}
-```
-**output (zh_TW.json)**
-```js
-{"you":"你","I":"我","love":"喜歡","eat":"吃","ilovegithub":"我愛 Github"}
+**input file name.txt**
+```txt
+i18n=> | en-GB | nb-NO 
+head | head | hode 
+=> error 
+details | Details: | "Detaljer:"
+=> messages
+=> connection
+connect | Failed to connect to server | Kunne ikke koble til server
+failed | Connection failed | Tilkobling mislykktes
+<=
+close | Close | Lukk 
+open | Open | Åpne
 ```
 
-**Try Advance**
+**output (en-GB/name.json)**
+```js
+{ "head": "head", "error": { "details": "Details:",	"messages": {	"connection": {	"connect": "Failed to connect to server",	"failed": "Connection failed"	}	}	},	"close": "Close",	"open": "Open"}
 ```
-i18n=> , en , zh_TW , de , my
-ilovegithub, "i love github but u", "我愛 github,但我也愛 git", was du gesagt, "saya pun"
+**output (nb-NO/name.json)**
+```js
+{ "head": "hode", "error": { "details": "Detaljer:", "messages": { "connection": { "connect": "Kunne ikke koble til server", "failed": "Tilkobling mislykktes" } } }, "close": "Lukk", "open": "Åpne"}
 ```
 
 **Try Nest**
 ```
-i18n=> , en , zh_TW , de , my
-ilovegithub | i love github | 我愛 Github | ich liebe Github | Saya cinta pada Github
-=> global
-sleep | sleep | 睡覺 | schlafen | tidur
-morning | morning | 早安 | Morgen | pagi
-=> people
-Ahmad | Ahmad | Ahmad | Ahmad | Ahmad
+i18n=> | en-GB | nb-NO 
+head | head | hode 
+=> error 
+details | Details: | "Detaljer:"
+=> messages
+=> connection
+connect | Failed to connect to server | Kunne ikke koble til server
+failed | Connection failed | Tilkobling mislykktes
 <=
-Back | back | 回來 | terug | balik
+close | Close | Lukk 
+open | Open | Åpne
 ```
 
-*It's work! Cool right ? You can try it on [online demo tools](http://huei90.github.io/i18n-generator)*
-
 ## License
-Copyright (c) 2014 [Huei Tan](https://github.com/huei90). Licensed under the MIT license.
+Copyright (c) 2015 [OCS HR](https://github.com/ocs-hr).  
+Licensed under the MIT license.

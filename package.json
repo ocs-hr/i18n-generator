@@ -1,28 +1,28 @@
 {
   "name": "i18n-generator",
-  "version": "0.2.0",
-  "description": "i18n json files generator for node, web browser and command line",
+  "version": "0.1.0",
+  "description": "i18n json files generator for node, which outputs to multiple folders",
   "main": "i18n-generator.js",
   "bin": {
     "i18n": "cli.js"
   },
-  "homepage": "https://github.com/huei90/i18n-generator",
-  "bugs": "https://github.com/huei90/i18n-generator/issues",
+  "homepage": "https://github.com/ocs-hr/i18n-generator",
+  "bugs": "https://github.com/ocs-hr/i18n-generator/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huei90/i18n-generator"
+    "url": "https://github.com/ocs-hr/i18n-generator"
   },
   "author": {
     "name": "Huei Tan",
     "email": "huei90@gmail.com",
-    "url": "https://github.com/huei90/"
+    "url": "https://github.com/ocs-hr/"
   },
   "scripts": {
     "test": "grunt",
     "browser": "browserify i18n-generator.js > browser.js"
   },
   "license": "MIT",
-  "preferGlobal": "true",
+  "preferGlobal": true,
   "keywords": [
     "i18n-generator",
     "i18n",
