@@ -145,7 +145,7 @@ function i18nGenerateAppendHeader(output, outfile) {
     }
 }
 
-function i18nAppendCrLf() {
+function i18nAppendCrLf(output, outfile) {
     for (var lang in variable.i18n) {
         
         if (!(variable.i18n).hasOwnProperty(lang)) {
